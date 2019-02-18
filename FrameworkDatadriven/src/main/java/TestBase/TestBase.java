@@ -19,9 +19,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -41,6 +43,15 @@ static WebDriver driver;
 		
 		extent = new ExtentReports(System.getProperty("user.dir") + "\\src\\main\\java\\extentreport\\" + formater.format(calendar.getTime()) + ".html", false);
 		
+		
+	}
+	
+	
+	@BeforeClass
+	public void startTest()
+	{
+	
+		driver=browser.BrowserFactory.getBrowser(browser.Dataproviderfactory.getconfig().getBrowser(),browser.Dataproviderfactory.getconfig().getTestURL());
 		
 	}
 	public String getScreenShot(String imagename) throws IOException{
@@ -106,8 +117,8 @@ static WebDriver driver;
 	
 	@Test(dataProvider="getCRMTestData")	
 	public void login(String usert,String passg) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\rajesh.k\\Desktop\\chrome\\chromedriver.exe");	
-		driver = new ChromeDriver(); 
+		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\rajesh.k\\Desktop\\chrome\\chromedriver.exe");	
+		//driver = new ChromeDriver(); 
 		test.log(LogStatus.PASS,"browser launched");
 		driver.get("http://primusbank.qedgetech.com/");
 		test.log(LogStatus.PASS,"Entered application url");

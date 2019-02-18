@@ -5,6 +5,7 @@
     <classes>
       <class name="TestCases.Testcase1">
         <methods>
+          <include name="startTest"/>
           <include name="beforeMethod"/>
           <include name="login" invocation-numbers="0"/>
           <include name="afterMethod"/>

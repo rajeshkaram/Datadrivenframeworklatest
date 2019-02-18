@@ -14,7 +14,7 @@ public class ExcelReader {
 	//public static long PAGE_LOAD_TIMEOUT = 20;
 			//public static long IMPLICIT_WAIT = 20;
 
-			public static String TESTDATA_SHEET_PATH = "C:\\Users\\rajesh.k\\Desktop\\datadriventestdata.xlsx";
+			public static String TESTDATA_SHEET_PATH = "C:\\Users\\rajesh.k\\git\\datadriven\\FrameworkDatadriven\\src\\main\\java\\TestData\\testdata.xlsx";
 
 			static Workbook book;
 			static Sheet sheet;
